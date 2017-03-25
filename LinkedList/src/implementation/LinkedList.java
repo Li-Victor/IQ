@@ -6,7 +6,7 @@ public class LinkedList {
 	public Node head;
 	
 	//separate class node
-	class Node{
+	public class Node{
 		public Node next = null;
 		public int data;
 		public Node(int d) {
@@ -158,6 +158,21 @@ public class LinkedList {
 			b = b.next;
 		}
 		return b.data;
+	}
+	
+	/*
+	 * delete node only when given access to that node
+	 * Solution: change the access node to the next node
+	 * This would not work for deleting the last node only when accessing the last node
+	 */
+	public static boolean deleteNode(Node d) {
+		if(d == null || d.next == null) {
+			return false;
+		}
+		Node next = d.next;
+		d.data = next.data;
+		d.next = next.next;
+		return true;
 	}
 }
 
