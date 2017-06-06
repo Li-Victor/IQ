@@ -7,7 +7,8 @@ import org.junit.Test;
 //junit test for checkPermutation
 public class CheckPermutationTest {
 
-	CheckPermutation cp = new BruteForce();
+	//CheckPermutation cp = new BruteForce();
+	CheckPermutation cp = new BetterSolution();
 	@Test
 	public void testIsPermutation() {
 		assertTrue(cp.CheckPermutation("aa", "aa"));
