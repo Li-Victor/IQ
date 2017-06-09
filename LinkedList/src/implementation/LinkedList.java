@@ -40,58 +40,90 @@ public class LinkedList {
 		head = deleteNode(head, d);
 	}
 	//helper function
-	private Node deleteNode(Node n, int d) {
+	private Node deleteNode(Node head, int d) {
+		if(head == null) return null;
 		
-		//if the head node is equivalent, return head.next
-		if(n.data == d) return n.next; 
+		Node current = head;
+		//if the head node is equivalent, return next node
+		if(current.data == d) return current.next; 
 		
 		//checks if d is in next
-		while(n.next != null) {
-			if(n.next.data == d) {
-				n.next = n.next.next;
+		while(current.next != null) {
+			if(current.next.data == d) {
+				current.next = current.next.next;
 				return head;
 			}
-			n = n.next;
+			current = current.next;
 		}
 		return head;
 	}
 	
 	//see if number is in the linked list
 	public boolean search(int d) {
-		 Node n = search(head, d);
-		 return n.data == d;
+		return search(head, d);
 	}
-	private Node search(Node head, int d) {
-		Node n = head;
-		//first checks head
-		if(head.data == d) return head;
-		while(n.next != null && n.next.data != d) {
-			n = n.next;
+	private boolean search(Node head, int d) {
+		Node current = head;
+		
+		while(current != null) {
+			if(current.data == d) return true;
+			current = current.next;
 		}
-		return n.next;
+		return false;
 	}
 	
-	//insert new node after found number
-	public void insertAfter(int number, int newNumber) {
-		insertAfter(head, number, newNumber);
+	//insert new node after first instance of designated number
+	public void insertAfter(int designatedNumber, int newNumber) {
+		head = insertAfter(head, designatedNumber, newNumber);
 	}
 	
-	private void insertAfter(Node head, int number, int newNumber) {
+	private Node insertAfter(Node head, int designatedNumber, int newNumber) {
+		if(head == null) return null;
+		
+		Node current = head;
+		
+		while(current != null) {
+			//found number
+			if(current.data == designatedNumber) {
+				Node newNode = new Node(newNumber);
+				newNode.next = current.next;
+				current.next = newNode;
+				break;
+			}
+			current = current.next;
+		}
+		return head;
+		
+	}
+	
+	//insert new node before first instance of designated number
+	public void insertBefore(int designatedNumber, int newNumber) {
+		head = insertBefore(head, designatedNumber, newNumber);
+	}
+	
+	private Node insertBefore(Node head, int designatedNumber, int newNumber) {
+		if(head == null) return null;
+		
+		Node current = head;
 		Node newNode = new Node(newNumber);
-		Node n = head;
-		
-		//search for node
-		while(n != null && n.data != number) {
-			n = n.next;
+		//check head first
+		if(current.data == designatedNumber) {
+			newNode.next = current;
+			return newNode;
 		}
 		
-		if(n.data == number) {
-			newNode.next = n.next;
-			n.next = newNode;
+		while(current.next != null) {
+			//found number
+			if(current.next.data == designatedNumber) {
+				newNode.next = current.next;
+				current.next = newNode;
+				break;
+			}
+			current = current.next;
 		}
 		
+		return head;
 	}
-	
 	/*
 	 * Check if two LinkedList are equal to each other
 	 */
