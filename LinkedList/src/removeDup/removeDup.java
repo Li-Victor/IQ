@@ -1,13 +1,13 @@
-package removeDup;
+package RemoveDup;
 
+import Implementation.LinkedList;
 
-import implementation.LinkedList;
-
-public class removeDup {
-	public static void main(String[] args) {
-		LinkedList l = new LinkedList();
-		l.insert(1); l.insert(1); l.insert(2);
-		l.removeDup(l.head); l.print();
-	}
+/*
+ * remove duplicates from linked list, make the linked list have unique elements
+ * similar to removeAllDup problem
+ */
+public interface RemoveDup {
 	
+	public void removeDup(LinkedList l);
+
 }

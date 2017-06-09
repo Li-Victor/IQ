@@ -1,7 +1,7 @@
 package deleteNode;
 
-import implementation.LinkedList;
-import implementation.LinkedList.Node;
+import Implementation.LinkedList;
+import Implementation.LinkedList.Node;
 
 public class deleteNode {
 	public static void main(String[] args) {

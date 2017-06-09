@@ -1,4 +1,4 @@
-package implementation;
+package Implementation;
 
 /*
  * Own implementation of LinkedList

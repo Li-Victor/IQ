@@ -1,6 +1,6 @@
 package findKToLast;
 
-import implementation.LinkedList;
+import Implementation.LinkedList;
 
 public class findKthToLast {
 	public static void main(String[] args) {
