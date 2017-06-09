@@ -7,7 +7,7 @@ public class LinkedList {
 	public Node head;
 	
 	//separate class node
-	private class Node{
+	public class Node{
 		public Node next = null;
 		public int data;
 		public Node(int d) {
@@ -15,7 +15,7 @@ public class LinkedList {
 		}
 	}
 	
-	
+	public LinkedList(){}
 	public LinkedList(int n) {
 		head = new Node(n);
 	}
@@ -35,7 +35,7 @@ public class LinkedList {
 		}
 	}
 	
-	//deleting the node that has d, removing without another copy(previous)
+	//deleting first instance of d
 	public void delete(int d) {
 		head = deleteNode(head, d);
 	}
@@ -86,14 +86,8 @@ public class LinkedList {
 		}
 		
 		if(n.data == number) {
-			if(n.next != null) {
-				//attach the new node next to current's next. And then 
-				//check if it n equals null?
-				newNode.next = n.next;
-				n.next = newNode;
-			} else {
-				n.next = newNode;
-			}
+			newNode.next = n.next;
+			n.next = newNode;
 		}
 		
 	}
