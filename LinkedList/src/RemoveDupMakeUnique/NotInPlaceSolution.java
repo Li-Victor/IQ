@@ -1,14 +1,14 @@
-package RemoveDup;
+package RemoveDupMakeUnique;
 
 import java.util.Hashtable;
 
 import Implementation.LinkedList;
 import Implementation.LinkedList.Node;
 
-public class NotInPlaceSolution implements RemoveDup {
+public class NotInPlaceSolution implements RemoveDupMakeUnique {
 	
 	@Override
-	public void removeDup(LinkedList l) {
+	public void removeDupMakeUnique(LinkedList l) {
 		removeDup(l.head);
 		
 	}
