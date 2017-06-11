@@ -20,6 +20,7 @@ public class NotInPlaceSolution implements RemoveDupMakeUnique {
 		Hashtable<Integer, Integer> ht = new Hashtable<>();
 		ht.put(current.data, 0); //put first value in hashtable
 		
+		//finds what current.next(not a duplicated number) should be
 		while(current != null) {
 			if(current.next == null) break;
 			else {

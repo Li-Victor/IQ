@@ -26,6 +26,7 @@ public class NotInPlaceSolution implements RemoveAllDup {
 		//remove duplicates from the start of LinkedList
 		//the head of LinkedList should be null or a unique number from original LinkedList
 		while(l.head != null) {
+			//can delete this line, never going to be null
 			if(ht.get(l.head.data) == null) break;
 			else if(ht.get(l.head.data) == 1) break;
 			else l.head = l.head.next;
@@ -37,6 +38,7 @@ public class NotInPlaceSolution implements RemoveAllDup {
 		current = l.head;
 		
 		while(current.next != null) {
+			//can delete this line, never going to be null
 			if(ht.get(current.next.data) == null) current = current.next; //move current pointer
 			else if(ht.get(current.next.data) == 1) current = current.next;
 			else current.next = current.next.next; //lose current.next Node

@@ -7,7 +7,8 @@ import org.junit.Test;
 import Implementation.LinkedList;
 
 public class RemoveDupTest {
-	RemoveDupMakeUnique r = new NotInPlaceSolution();
+	//RemoveDupMakeUnique r = new NotInPlaceSolution();
+	RemoveDupMakeUnique r = new AnotherNotInPlaceSolution();
 	
 	@Test
 	public void testEmpty() {
