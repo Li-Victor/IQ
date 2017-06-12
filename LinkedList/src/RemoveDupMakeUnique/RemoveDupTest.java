@@ -8,7 +8,8 @@ import Implementation.LinkedList;
 
 public class RemoveDupTest {
 	//RemoveDupMakeUnique r = new NotInPlaceSolution();
-	RemoveDupMakeUnique r = new AnotherNotInPlaceSolution();
+	//RemoveDupMakeUnique r = new AnotherNotInPlaceSolution();
+	RemoveDupMakeUnique r = new InPlaceSolution();
 	
 	@Test
 	public void testEmpty() {

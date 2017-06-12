@@ -25,6 +25,7 @@ public class AnotherNotInPlaceSolution implements RemoveDupMakeUnique {
 				//move prev and head
 				prev = head;
 			}
+			//always move head
 			head = head.next;
 		}
 	}
