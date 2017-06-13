@@ -7,8 +7,8 @@ import org.junit.Test;
 import Implementation.LinkedList;
 
 public class RemoveAllDupTest {
-	RemoveAllDup r = new NotInPlaceSolution();
-	
+	//RemoveAllDup r = new NotInPlaceSolution();
+	RemoveAllDup r = new InPlaceSolution();
 	@Test
 	public void testEmpty() {
 		LinkedList test = new LinkedList();
@@ -57,7 +57,7 @@ public class RemoveAllDupTest {
 	
 	@Test
 	public void testDup() {
-		//1 1 should be 1
+		//1 1 should be null
 		LinkedList test = new LinkedList(1); test.insert(1);
 		r.removeAllDup(test);
 		assertNull(test.head);
